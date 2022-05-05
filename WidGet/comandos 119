@@ -1,0 +1,64 @@
+
+ssh119
+ssh basa-desenvolvimento@10.20.53.119 -p 22     ---Acessar servidor da 1019
+
+
+user: basa-desenvolvimento
+pass: WTAu:v5?Qv
+
+
+
+sftp://10.20.53.119/  - navegador de arquivos
+
+sftp://10.20.53.119/opt/instancias/basa-desenvolvimento  ---- pastas pessoas
+
+
+docker exec -it banklink bash      ----- Acessar container do bank link
+
+./bin/jboss.sh stop     --- parar container para gerenciar arquivos 
+
+ps ax | grep jboss    ----- verificar se o jboos parou dps de usar o comando acima 
+
+			kill -9 <id do processo> --------  para finalizar qualquer instancia jboos sendo executada
+
+
+cd jboss-deploy/deployments   ------ acessar pasta com pacote da aplicação
+
+
+
+rm -rf basa-banklink-ear.ear.deployed basa-banklink-ear.ear.old   ---- apagas arquivos de deploy que serão desnessessarios para a sua versão 
+
+
+mv basa-banklink-ear.ear basa-banklink-ear.ear.old   ----renomeia versão atual para versão de backup old
+
+
+
+-- Fora do blk -- na pasta pessoal
+
+
+docker cp basa-banklink-ear.ear banklink:/home/blkprdbasa/jboss-deploy/deployments
+
+
+-- No BLK ---
+
+ cd ../..
+
+./bin/jboss.sh start   --------------- estarta aplicação
+
+	dar comando [ctr+c] para sair da tela 
+
+
+less log/server.log
+
+ dentro do less usar [shif+f] ----------------- para ver o log 
+
+
+
+
+
+
+ http://10.20.53.119:10288/bl-jrouter/    ---------- acessar jrouter e dar start a ISO
+
+
+
+
