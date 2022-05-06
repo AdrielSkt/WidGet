@@ -4,6 +4,7 @@ import { FeedbackContentStep } from './FeedbackContentStap';
 
 interface FeedbackContentStepProps{
   alterarVariavelDeControle: (type: FeedbackType)=> void;
+
 }
 
 
